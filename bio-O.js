@@ -141,6 +141,7 @@ function logAllPairesOfArray(array) {
     }
 }
 logAllPairesOfArray(boxesletter)
+// answer - a a b a c a d a e a
 
 // WITH FOREACH 
 function logAllPairesOfBoxes(boxes) {
@@ -179,3 +180,93 @@ printAllNumbersThenAllPairSums(num)
 // Exp. O(x^2+3x+100+x/2)
 // X = 5 O(5*2+15+100+250)
 // 0(n^2)
+
+
+// Space Complexity
+const complex = [1, 2, 3, 4, 5]
+function boo(n) {
+    for (let i = 0; i < n.length; i++) {
+        console.log('Boo!')
+    }
+}
+boo(complex) //O(1)
+
+function arrayOfHintTimes(n) {
+    let hiArray = [];
+    for (let i = 0; i < n; i++) {
+        hiArray = 'Hello'
+    }
+    return hiArray;
+}
+arrayOfHintTimes(5)
+
+//Find 1st and Find last tweet
+const array = [
+    { tweet: 'Hello', date: 2021 },
+    { tweet: 'Go away', date: 2022 },
+    { tweet: 'Let Have fun', date: 2023, },
+    { tweet: 'Enjoy most fun', date: 2024, }]
+
+function checkTweet(list) {
+    const firstTweet = list[0].tweet;
+    const lastTweet = list[list.length - 1].tweet;
+    return { firstTweet, lastTweet };
+}
+
+const { firstTweet, lastTweet } = checkTweet(array);
+console.log('First tweet:', firstTweet);
+console.log('Last tweet:', lastTweet);
+//BIG O(n^2)
+
+//Find how many tweet
+const array2 = [
+    { tweet: 'Hello', date: 2021 },
+    { tweet: 'Go away', date: 2022 },
+    { tweet: 'Let Have fun', date: 2023 },
+    { date: 2024 }
+];
+
+function countTweets(list) {
+    let tweetCount = 0;
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].tweet) {
+            tweetCount++;
+        }
+    }
+    return tweetCount;
+}
+const tweetCount = countTweets(array2);
+console.log('Number of tweets:', tweetCount);
+
+
+// Type Of LOOP IN javascript
+// 1.For Loop 
+const everyoneList = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank'];
+function findNemo1(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'nemo') {
+            console.log('Found Nemo')
+        }
+    }
+}
+findNemo1(everyoneList);
+
+// 2. forEach loop
+const findNemo2 = array => {
+    array.forEach(fish => {
+        if (fish === 'nemo') {
+            console.log('Found Nemo!')
+        }
+    })
+}
+findNemo2(everyoneList);
+
+// 3.  loop diffrent
+const findNemo3 = array => {
+    for (let fish of array) {
+        if (fish === 'nemo') {
+            console.log('Found Nemo!')
+        }
+    }
+}
+findNemo3(everyoneList);
